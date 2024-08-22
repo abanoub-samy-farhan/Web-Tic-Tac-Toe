@@ -1,0 +1,64 @@
+# ignoring packeges
+node_modules/
+.next/
+
+# ignoring build artifacts
+dist/
+
+# ignoring environment files
+.env
+
+# ignoring log files
+*.log
+
+# ignoring temporary files
+*.tmp
+
+# ignoring IDE specific files
+.vscode/
+.idea/
+
+# ignoring compiled files
+*.class
+*.dll
+*.exe
+
+# ignoring backup files
+*.bak
+*.swp
+*.swo
+
+# ignoring database files
+*.db
+*.sqlite
+
+# ignoring image files
+*.jpg
+*.jpeg
+*.png
+*.gif
+
+# ignoring video files
+*.mp4
+*.avi
+*.mov
+
+# ignoring audio files
+*.mp3
+*.wav
+
+# ignoring compressed files
+*.zip
+*.rar
+*.gz
+
+# ignoring generated documentation
+docs/
+
+# ignoring configuration files
+config.ini
+config.json
+
+# ignoring temporary directories
+temp/
+tmp/
