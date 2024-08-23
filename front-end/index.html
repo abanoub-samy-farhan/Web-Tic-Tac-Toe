@@ -1,0 +1,59 @@
+CTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Tic Tac Toe - The Ultimate Showdown</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">TicTacToe Mania</div>
+        <ul>
+            <li><a href="#about">What's This?</a></li>
+            <li><a href="#get-started" class="get-started-btn">Jump In!</a></li>
+        </ul>
+    </nav>
+
+    <!-- Welcome Section -->
+    <section class="welcome">
+        <h1>Are You Tic-Tac-Toe-nough?</h1>
+        <p>Welcome to the world’s most competitive Tic Tac Toe arena! Ready to challenge your brain and your friends in a battle of wits? Buckle up, because it’s about to get real!</p>
+        <button onclick="navigateToSignUp()" id="get-started">Let's Get Tic-Tac-Crackin'!</button>
+    </section>
+
+    <!-- Dashboard (Placeholder) -->
+    <div id="dashboard" style="display:none;">
+        <!-- Profile Component -->
+        <section class="profile">
+            <h2>Player Profile</h2>
+            <p><strong>Username:</strong> <span id="username">TheUltimateToe</span></p>
+            <p><strong>Win/Loss Ratio:</strong> <span id="win-loss">42 Wins / 7 Losses</span></p>
+            <button onclick="editProfile()">Revamp Your Persona</button>
+        </section>
+
+        <!-- History Games Component -->
+        <section class="history-games">
+            <h2>Your Legendary Battles</h2>
+            <ul id="game-history">
+                <li>Game 1: Crushed It! (Win)</li>
+                <li>Game 2: Close Call... (Loss)</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Web Tic Tac Toe - Where X's and O's Live Happily Ever After</p>
+        <ul>
+            <li><a href="#">Privacy Policy (We Keep Secrets!)</a></li>
+            <li><a href="#">Terms of Service (No Toe Left Behind)</a></li>
+        </ul>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+

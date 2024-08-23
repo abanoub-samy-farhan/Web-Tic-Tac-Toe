@@ -1,0 +1,185 @@
+n: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Colors */
+:root {
+    --red: #8B0000; /* Deep red for accents */
+    --brown: #A0522D; /* Warm brown for main elements */
+    --light-brown: #D2B48C; /* Lighter brown for backgrounds */
+    --dark-brown: #5C4033; /* Darker brown for text */
+    --white: #ffffff;
+    --black: #212121; /* Soft black for text */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--dark-brown);
+    color: var(--white);
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--red);
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: var(--red);
+}
+
+/* Welcome Section */
+.welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+    background-color: var(--light-brown);
+    padding: 20px;
+}
+
+.welcome h1 {
+    font-size: 2.5rem;
+    color: var(--red);
+    margin-bottom: 20px;
+    font-family: 'Comic Sans MS', sans-serif; /* Adds a playful touch */
+}
+
+.welcome p {
+    font-size: 1.2rem;
+    color: var(--dark-brown);
+    margin-bottom: 30px;
+    max-width: 500px;
+    font-family: 'Comic Sans MS', sans-serif; /* Matches the friendly theme */
+}
+
+.welcome button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--brown);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.welcome button:hover {
+    background-color: var(--red);
+    transform: scale(1.05);
+}
+
+/* Dashboard and Components */
+.profile, .history-games {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid var(--brown);
+    background-color: var(--white);
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+#dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile h2, .history-games h2 {
+    font-size: 1.5rem;
+    color: var(--black);
+    margin-bottom: 10px;
+}
+
+.history-games ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.history-games ul li {
+    margin-bottom: 5px;
+    color: var(--dark-brown);
+    font-family: 'Comic Sans MS', sans-serif; /* Keeps the friendly theme consistent */
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--dark-brown);
+    color: var(--white);
+}
+
+footer p {
+    margin: 0;
+}
+
+footer ul {
+    display: flex;
+    list-style: none;
+}
+
+footer ul li {
+    margin-left: 20px;
+}
+
+footer ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+footer ul li a:hover {
+    color: var(--red);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .welcome h1 {
+        font-size: 2rem;
+    }
+
+    .welcome p {
+        font-size: 1rem;
+    }
+
+    .welcome button {
+        font-size: 0.9rem;
+    }
+}
+
