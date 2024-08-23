@@ -62,3 +62,4 @@ config.json
 # ignoring temporary directories
 temp/
 tmp/
+__pycache__/
