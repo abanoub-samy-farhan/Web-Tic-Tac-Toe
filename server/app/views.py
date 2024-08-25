@@ -55,3 +55,50 @@ def logout():
     logout_user()
     return jsonify({"message": "Logout successful"})
 
+@app.route("/profile")
+@login_required
+def profile():
+    user = User.query.get(current_user.id)
+
+    return jsonify({
+        "username": user.username,
+        "avatar": user.avatar,
+        "banner": user.banner,
+        "about": user.about
+    })
+
+@app.route("/profile/<string:id>")
+@login_required
+def profile_id(id):
+    user = User.query.get_or_404(id)
+
+    return jsonify({
+        "username": user.username,
+        "avatar": user.avatar,
+        "banner": user.banner,
+        "about": user.about
+    })
+
+# @app.route("/match_history")
+# @login_required
+# def profile():
+#     user_id = current_user.id
+#     matches = Game.query.filter(
+#         (Game.player_id == user_id) | (Game.opponent_id == user_id)
+#     ).all()
+
+#     match_history = []
+#     for match in matches:
+#         match_history.append({
+#             'game_id': match.id,
+#             'opponent_id': user_id if match.player_id == user_id else match.opponent_id,
+#             'result': match.result,
+#             'date_played': match.date_played.strftime('%Y-%m-%d %H:%M:%S')
+#         })
+
+#     return jsonify({
+#         "username": user.username,
+#         "avatar": user.avatar,
+#         "banner": user.banner,
+#         "about": user.about
+#     })
