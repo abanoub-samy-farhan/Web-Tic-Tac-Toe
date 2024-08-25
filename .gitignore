@@ -62,4 +62,7 @@ config.json
 # ignoring temporary directories
 temp/
 tmp/
+
+# back-end stuff
+venv/
 __pycache__/
