@@ -26,7 +26,7 @@ class User(db.Model, Base, UserMixin):
 class Game(db.Model, Base):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.String(240), db.ForeignKey('user.id'), nullable=False)
-    oppenent_id = db.Column(db.String(240), db.ForeignKey('user.id'), nullable=False)
+    opponent_id = db.Column(db.String(240), db.ForeignKey('user.id'), nullable=False)
     game_status = db.Column(db.Enum(GameStatusEnum), nullable=False)
     def __repr__(self):
         return '<Game %r>' % self.game_id
