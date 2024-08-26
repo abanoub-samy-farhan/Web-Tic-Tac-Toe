@@ -1,23 +1,25 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import WhatsThis from './components/WhatsThis';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfService from './components/TermsOfService';
 
-n navigateToSignUp() {
-    document.getElementById('dashboard').style.display = 'block';
+function App() {
+    return (
+        <Router>
+            <div>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<WhatsThis />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                    <Route path="/terms-of-service" element={<TermsOfService />} />
+                </Routes>
+                <Footer />
+            </div>
+        </Router>
+    );
 }
 
-// Placeholder function for editing profile
-function editProfile() {
-    const username = prompt('Enter new username:');
-    if (username) {
-        document.getElementById('username').textContent = username;
-    }
-}
-
-// Example of expanding with a dynamic history section
-function addGameHistory(result) {
-    const historyList = document.getElementById('game-history');
-    const newItem = document.createElement('li');
-    newItem.textContent = `Game ${historyList.children.length + 1}: ${result}`;
-    historyList.appendChild(newItem);
-}
-
-// Example: addGameHistory('Win');
-// Example: addGameHistory('Loss');
+export default App;
