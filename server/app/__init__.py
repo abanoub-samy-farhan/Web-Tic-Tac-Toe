@@ -1,3 +1,4 @@
+from flask_socketio import SocketIO
 from flask import Flask
 from flask_migrate import Migrate
 from flask_login import LoginManager
@@ -14,6 +15,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 # Initialize extensions
 db.init_app(app)
 login_manager.init_app(app)
+socketio = SocketIO(app)
 
 migrate = Migrate(app, db)
 
@@ -22,4 +24,4 @@ migrate = Migrate(app, db)
 def load_user(user_id):
     return User.query.get(user_id)
 
-from app import models, views
+from app import models, views, tic_tac_toe

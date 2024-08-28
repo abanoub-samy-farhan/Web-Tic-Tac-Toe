@@ -32,7 +32,6 @@ def signup():
 
     hashed_password = generate_password_hash(password, method="pbkdf2:sha256")
     new_user = User(
-        id=str(uuid.uuid4()),
         username=username,
         hashed_password=hashed_password,
         avatar=avatar,
