@@ -83,7 +83,9 @@ def generate_invite():
 
     socketio.emit('on_join', {'game_id': game.id})
 
-    # g.gameBoard = TicTacToeGame()
+    g.gameBoard = TicTacToeGame()
+    g.gameBoard.set_game(game)
+
 
     return jsonify({'invite_link': invite_link})
 
@@ -103,13 +105,12 @@ def join_game(game_id):
         return jsonify({'error': 'Game is full'}), 400
 
     game.opponent_id = str(current_user.id)
-    game.room_status = RoomState.PLAAYING
+    game.room_status = RoomState.IN_PROGRESS
     db.session.commit()
 
-    socketio.emit('on_join', {'game_id': game.id})
-    socketio.emit('start_game', {'game_id': game_id}, room=str(game_id))
+    socketio.emit('on_join', {'game_id': game.id, 'opponent_id': game.opponent_id})
 
-    return jsonify({'message': 'Joined the game successfully', 'game_id': game.id})
+    return jsonify({'message': 'Successfully joined the game'})
 
 
 @socketio.on('on_join')
