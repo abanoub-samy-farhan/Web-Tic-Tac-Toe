@@ -18,6 +18,32 @@ class TicTacToeGame():
         db.session.add(self.game)
         db.session.commit()
 
+
+    def get_user(self):
+        return User.query.get(self.user_id)
+    
+    def set_user(self, user):
+        self.user_id = user.id
+
+    def get_opponent(self):
+        return User.query.get(self.opponent_id)
+    
+    def set_opponent(self, opponent):
+        self.opponent_id = opponent.id
+
+    def get_board(self):
+        return self.board
+    
+    def set_board(self, board):
+        self.board = board
+    
+    def get_game(self):
+        return self.game
+    
+    def set_game(self, game):
+        self.game = game
+    
+
     def make_move(self, move, player):
         if self.board[move] == ' ':
             self.board[move] = player
@@ -57,7 +83,7 @@ def generate_invite():
 
     socketio.emit('on_join', {'game_id': game.id})
 
-    g.gameBoard = TicTacToeGame()
+    # g.gameBoard = TicTacToeGame()
 
     return jsonify({'invite_link': invite_link})
 

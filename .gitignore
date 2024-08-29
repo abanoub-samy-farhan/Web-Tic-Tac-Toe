@@ -66,3 +66,4 @@ tmp/
 # back-end stuff
 venv/
 __pycache__/
+.venv/
